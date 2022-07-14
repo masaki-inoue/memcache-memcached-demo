@@ -1,0 +1,12 @@
+version: '3'
+services:
+  memcached:
+    image: memcached
+    ports:
+      - "11211:11211"
+  php-app:
+    build: .
+    image: memcached-php-app
+    tty: true
+    volumes:
+      - ./lib:/var/www/html
